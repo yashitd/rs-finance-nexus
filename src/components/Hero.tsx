@@ -3,6 +3,20 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Shield, CreditCard, TrendingUp } from 'lucide-react';
 
 const Hero = () => {
+  const handleGetStarted = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleLearnMore = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
       <div className="container mx-auto px-4">
@@ -23,11 +37,11 @@ const Hero = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8" onClick={handleGetStarted}>
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8">
+                <Button variant="outline" size="lg" className="text-lg px-8" onClick={handleLearnMore}>
                   Learn More
                 </Button>
               </div>
